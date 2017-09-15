@@ -7,6 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import org.opencv.core.Mat;
+import org.opencv.core.Core;
+import org.opencv.android.Utils;
+import org.opencv.imgproc.Imgproc;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 public class MainActivity extends AppCompatActivity {
 
     private String Cameras[];
@@ -30,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         handler = new Handler();
         try{
-
+            System.loadLibrary("opencv_java3");
         }catch(Exception e)
         {
             e.printStackTrace();
